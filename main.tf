@@ -17,8 +17,8 @@ module "ecr" {
   source = "./modules/ecr"
 }
 
-module "security-group" {
-  source = "./modules/security-group"
+module "security_group" {
+  source = "./modules/security_group"
   name   = var.name
   vpc_id = module.vpc.vpc_id
 }
