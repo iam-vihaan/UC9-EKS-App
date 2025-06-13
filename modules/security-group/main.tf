@@ -1,4 +1,4 @@
-resource "aws_security_group" "eks" {
+resource "aws_security-group" "eks" {
   name        = "${var.name}-eks-sg"
   description = "EKS security group"
   vpc_id      = var.vpc_id
