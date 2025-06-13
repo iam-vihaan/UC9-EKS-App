@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 env:
-  AWS_REGION: ap-south-1
+  AWS_REGION: us-east-1
 
 jobs:
   build-push-Flask-app:
@@ -24,8 +24,8 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: arn:aws:iam::784733659029:role/oidc-role
+          aws-region: us-east-1
 
       - name: Login to Amazon ECR # login ecr
         id: login-ecr
@@ -58,8 +58,8 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: arn:aws:iam::784733659029:role/oidc-role
+          aws-region: us-east-1
 
       - name: Setup kubectl
         uses: azure/setup-kubectl@v3
