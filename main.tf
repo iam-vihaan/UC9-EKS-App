@@ -32,7 +32,7 @@ module "eks" {
   node_role_arn       = module.iam.eks_node_role_arn
   eks_oidc_root_ca_thumbprint = var.eks_oidc_root_ca_thumbprint
   cluster_role_dependency = module.iam.eks_role_depends_on
-  security-group_ids  = [module.security-group.eks_security_group_id]
+  security_group_ids  = [module.security_group.eks_security_group_id]
 }
 
 module "helm" {
